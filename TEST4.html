@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="TEST4.js">
+</head>
+<body>
+    <!-- In your HTML file, keep the anchor tag as it is in home-snippet.html -->
+<a href="#" id="specials-link">Specials</a>
+
+<!-- Include the following JavaScript in your application -->
+<script>
+// Function to load a random category and trigger the loadMenuItems function
+function loadRandomCategory() {
+  // Define an array of possible category short_names
+  var categories = ["Lunch", "Dinner", "Sushi", "Appetizers", "Desserts", "Drinks"]; // Add more categories as needed
+
+  // Generate a random index to select a category from the array
+  var randomIndex = Math.floor(Math.random() * categories.length);
+
+  // Get the random category short_name
+  var randomCategoryShortName = categories[randomIndex];
+
+  // Trigger the loadMenuItems function with the random category short_name
+  $dc.loadMenuItems(randomCategoryShortName);
+}
+
+// Add a click event listener to the "Specials" link
+document.getElementById("specials-link").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default behavior of the anchor tag
+  loadRandomCategory(); // Call the function to load a random category
+});
+</script>
+
+
+</body>
+</html>
